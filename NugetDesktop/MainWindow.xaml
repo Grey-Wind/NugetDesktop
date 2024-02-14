@@ -8,7 +8,7 @@
         Title="MainWindow" Height="270" Width="480">
     <Grid>
         <Label x:Name="FolderLabel" Content="%Folder%" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Height="25" Width="165"/>
-        <ComboBox x:Name="LanguageBox" HorizontalAlignment="Left" Margin="375,200,0,0" VerticalAlignment="Top" Width="75" SelectedIndex="0">
+        <ComboBox x:Name="LanguageBox" HorizontalAlignment="Left" Margin="375,200,0,0" VerticalAlignment="Top" Width="75" SelectedIndex="0" SelectionChanged="LanguageBox_SelectionChanged">
             <Label x:Name="SimplifiedChineseBox" Content="简体中文"/>
             <Label x:Name="TraditionalChineseBox" Content="繁體中文"/>
             <Label x:Name="EnglishBox" Content="English"/>

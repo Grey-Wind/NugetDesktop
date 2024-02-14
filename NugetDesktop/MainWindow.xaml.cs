@@ -22,7 +22,6 @@ namespace NugetDesktop
         private void MainWindow_Loaded(object sender, RoutedEventArgs e)
         {
             LanguageInitialize();
-            Error.Msg("错误代码：001-nf|en");
         }
 
         private void LanguageInitialize()
@@ -31,8 +30,7 @@ namespace NugetDesktop
 
             if (selectedIndex == 0)
             {
-                // 执行与索引为0对应的代码
-                Console.WriteLine("选中了第一个选项");
+                ReadJsonFile("Chinese");
             }
             else if (selectedIndex == 1)
             {
@@ -52,7 +50,6 @@ namespace NugetDesktop
         }
 
         // 读取JSON文件内容
-        // 读取JSON文件内容
         private void ReadJsonFile(string fileName)
         {
             string jsonFolderPath = Path.Combine(Directory.GetCurrentDirectory(), "language");
@@ -63,11 +60,11 @@ namespace NugetDesktop
                 string jsonContent = File.ReadAllText(jsonFilePath);
                 JObject jsonObject = JObject.Parse(jsonContent);
 
-                JObject propertiesObject = (JObject)jsonObject["properties"];
+                JObject LabelObject = (JObject)jsonObject["Label"];
 
-                if (propertiesObject != null)
+                if (LabelObject != null)
                 {
-                    foreach (var property in propertiesObject.Properties())
+                    foreach (var property in LabelObject.Properties())
                     {
                         string propertyName = property.Name;
                         string propertyValue = property.Value.ToString();
@@ -81,8 +78,13 @@ namespace NugetDesktop
             }
             else
             {
-                Error.Msg("找不到指定的JSON文件");
+                Error.Msg("002-nf");
             }
+        }
+
+        private void LanguageBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            LanguageInitialize();
         }
     }
 }

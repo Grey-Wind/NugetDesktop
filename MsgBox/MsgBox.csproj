@@ -45,5 +45,11 @@
     <Compile Include="Error.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ColorfulConsole\ColorfulConsole.vbproj">
+      <Project>{f820ddc9-0ead-410d-88b4-c52f5a07abaa}</Project>
+      <Name>ColorfulConsole</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
