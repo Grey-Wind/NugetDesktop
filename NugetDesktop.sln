@@ -1,0 +1,36 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34525.116
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NugetDesktop", "NugetDesktop\NugetDesktop.csproj", "{CA26938B-860F-4316-9D74-AFE9B0818328}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "解决方案项", "解决方案项", "{5B2B0A21-7789-469C-9999-49E9774CF2A5}"
+	ProjectSection(SolutionItems) = preProject
+		ErrorCode.txt = ErrorCode.txt
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MsgBox", "MsgBox\MsgBox.csproj", "{6203B3BD-942B-40D5-9FA6-ECCC0B330AB3}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CA26938B-860F-4316-9D74-AFE9B0818328}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CA26938B-860F-4316-9D74-AFE9B0818328}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CA26938B-860F-4316-9D74-AFE9B0818328}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CA26938B-860F-4316-9D74-AFE9B0818328}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6203B3BD-942B-40D5-9FA6-ECCC0B330AB3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6203B3BD-942B-40D5-9FA6-ECCC0B330AB3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6203B3BD-942B-40D5-9FA6-ECCC0B330AB3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6203B3BD-942B-40D5-9FA6-ECCC0B330AB3}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E458C787-73B7-423D-A3AD-4ADB2E44FECC}
+	EndGlobalSection
+EndGlobal

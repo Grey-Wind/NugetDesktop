@@ -1,0 +1,18 @@
+﻿<Window x:Class="NugetDesktop.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:NugetDesktop"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="270" Width="480">
+    <Grid>
+        <Label x:Name="FolderLabel" Content="%Folder%" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Height="25" Width="165"/>
+        <ComboBox x:Name="LanguageBox" HorizontalAlignment="Left" Margin="375,200,0,0" VerticalAlignment="Top" Width="75" SelectedIndex="0">
+            <Label x:Name="SimplifiedChineseBox" Content="简体中文"/>
+            <Label x:Name="TraditionalChineseBox" Content="繁體中文"/>
+            <Label x:Name="EnglishBox" Content="English"/>
+        </ComboBox>
+
+    </Grid>
+</Window>
