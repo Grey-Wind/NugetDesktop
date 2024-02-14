@@ -75,6 +75,22 @@ namespace NugetDesktop
                         }
                     }
                 }
+
+                JObject MwObject = (JObject)jsonObject["Mw"];
+
+                if (MwObject != null)
+                {
+                    foreach (var property in MwObject.Properties())
+                    {
+                        string propertyName = property.Name;
+                        string propertyValue = property.Value.ToString();
+
+                        if (propertyName == "Title")
+                        {
+                            Mw.Title = propertyValue;
+                        }
+                    }
+                }
             }
             else
             {
