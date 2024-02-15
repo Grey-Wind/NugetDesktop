@@ -1,0 +1,9 @@
+{
+  "Mw": {
+    "Title": "Nuget Push Desktop"
+  },
+  "Label": {
+    "FolderLabel": "Folder for published files",
+    "ApiLabel": "API Key"
+  }
+}

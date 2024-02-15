@@ -16,33 +16,34 @@ namespace NugetDesktop
         public MainWindow()
         {
             InitializeComponent();
-            Loaded += MainWindow_Loaded;
+            ChangeLanguage();
         }
 
-        private void MainWindow_Loaded(object sender, RoutedEventArgs e)
+        private void LanguageBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            LanguageInitialize();
+            ChangeLanguage(); // 使用当前的 MainWindow 实例来初始化语言设置
         }
 
-        private void LanguageInitialize()
+        private void ChangeLanguage()
         {
             var selectedIndex = LanguageBox.SelectedIndex;
-
+            
+            // 简体中文
             if (selectedIndex == 0)
             {
-                ReadJsonFile("Chinese");
+                ReadJsonFile("SimplifiedChinese");
             }
+            // 繁体中文
             else if (selectedIndex == 1)
             {
-                // 执行与索引为1对应的代码
-                Console.WriteLine("选中了第二个选项");
+                ReadJsonFile("TraditionalChinese");
             }
+            // 英文
             else if (selectedIndex == 2)
             {
-                // 执行与索引为2对应的代码
-                Console.WriteLine("选中了第三个选项");
+                ReadJsonFile("English");
             }
-            // 默认情况下，可以执行与其他索引对应的代码
+            // 报错
             else
             {
                 Error.Msg("错误代码：001-nf|en");
@@ -96,11 +97,6 @@ namespace NugetDesktop
             {
                 Error.Msg("002-nf");
             }
-        }
-
-        private void LanguageBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            LanguageInitialize();
         }
     }
 }

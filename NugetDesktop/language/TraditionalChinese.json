@@ -1,0 +1,9 @@
+{
+  "Mw": {
+    "Title": "Nuget Push桌面端"
+  },
+  "Label": {
+    "FolderLabel": "準備發佈的文件所在的文件夾",
+    "ApiLabel": "API密鑰"
+  }
+}
