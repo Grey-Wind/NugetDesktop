@@ -128,5 +128,10 @@
   <ItemGroup>
     <Resource Include="Nuget.ico" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="nuget\nuget.exe">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

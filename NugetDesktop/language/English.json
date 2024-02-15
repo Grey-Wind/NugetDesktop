@@ -4,6 +4,7 @@
   },
   "Label": {
     "FolderLabel": "Folder for published files",
-    "ApiLabel": "API Key"
+    "ApiLabel": "API Key",
+    "FileNameLabel": "File Name"
   }
 }

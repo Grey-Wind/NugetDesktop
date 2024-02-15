@@ -11,12 +11,15 @@
     <Grid>
         <Label x:Name="FolderLabel" Content="%Folder%" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Height="25" Width="165"/>
         <TextBox x:Name="FolderPathTBox" HorizontalAlignment="Left" Margin="180,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="270" Height="25"/>
-        <Label x:Name="ApiLabel" Content="%API%" HorizontalAlignment="Left" Margin="10,35,0,0" VerticalAlignment="Top" Width="165"/>
-        <TextBox x:Name="ApiKeyTBox" HorizontalAlignment="Left" Margin="180,40,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="270" Height="25"/>
+        <Label x:Name="ApiLabel" Content="%API%" HorizontalAlignment="Left" Margin="10,39,0,0" VerticalAlignment="Top" Width="165"/>
+        <TextBox x:Name="ApiKeyTBox" HorizontalAlignment="Left" Margin="180,37.5,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="270" Height="25"/>
+        <Label x:Name="FileNameLabel" Content="%FileName%" HorizontalAlignment="Left" Margin="10,65,0,0" VerticalAlignment="Top" Width="165"/>
+        <TextBox x:Name="FileNameTBox" HorizontalAlignment="Left" Margin="180,65,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="270" Height="25"/>
         <ComboBox x:Name="LanguageBox" HorizontalAlignment="Left" Margin="375,200,0,0" VerticalAlignment="Top" Width="75" SelectedIndex="0" SelectionChanged="LanguageBox_SelectionChanged">
             <Label x:Name="SimplifiedChineseBox" Content="简体中文"/>
             <Label x:Name="TraditionalChineseBox" Content="繁體中文"/>
             <Label x:Name="EnglishBox" Content="English"/>
         </ComboBox>
+        <Button x:Name="PushBtn" Content="%Push%" HorizontalAlignment="Left" Margin="375,95,0,0" VerticalAlignment="Top" Width="75" Click="Push"/>
     </Grid>
 </Window>

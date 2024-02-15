@@ -1,10 +1,11 @@
 ﻿using System;
 using System.IO;
+using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Xml.Linq;
 using MsgBox;
 using Newtonsoft.Json.Linq;
+using ShellLibrary;
 
 namespace NugetDesktop
 {
@@ -21,7 +22,7 @@ namespace NugetDesktop
 
         private void LanguageBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            ChangeLanguage(); // 使用当前的 MainWindow 实例来初始化语言设置
+            ChangeLanguage();
         }
 
         private void ChangeLanguage()
@@ -92,10 +93,65 @@ namespace NugetDesktop
                         }
                     }
                 }
+
+                JObject BtnObject = (JObject)jsonObject["Button"];
+
+                if (BtnObject != null)
+                {
+                    foreach (var property in BtnObject.Properties())
+                    {
+                        string propertyName = property.Name;
+                        string propertyValue = property.Value.ToString();
+
+                        if (FindName(propertyName) is Button button)
+                        {
+                            button.Content = propertyValue;
+                        }
+                    }
+                }
             }
             else
             {
                 Error.Msg("002-nf");
+            }
+        }
+
+        private async void Push(object sender, RoutedEventArgs e)
+        {
+            string empty = " ";
+            string FolderPath = FolderPathTBox.Text;
+            string Api = ApiKeyTBox.Text;
+            string FileName = FileNameTBox.Text;
+            string SourceLink = "https://api.nuget.org/v3/index.json";
+            string FilePath = FolderPath + "/" + FileName;
+
+            // 判断输入参数是否有空值
+            if (string.IsNullOrEmpty(FolderPath) || string.IsNullOrEmpty(Api) || string.IsNullOrEmpty(FileName))
+            {
+                // 有空值，进行错误处理
+                Error.Msg("003-argu/e\n输入参数不能为空");
+            }
+            else if (!System.IO.File.Exists(FilePath))
+            {
+                // 测试准备发布的文件是否有基础问题
+                Error.Msg("003-fnd\n准备发布的文件不存在！");
+            }
+            else if (!FileName.EndsWith(".nupkg", StringComparison.OrdinalIgnoreCase))
+            {
+                // 测试准备发布的文件是否为 .nupkg 文件
+                Error.Msg("003-few\n准备发布的文件后缀名错误，即不为 .nupkg");
+            }
+            else
+            {
+                string setKey = "cd /d" + empty + "nuget" + empty + "&&" + empty + "nuget.exe setApiKey" + empty + Api;
+
+                string push = "cd /d" + empty + FolderPath + empty + "&&" + empty + "dotnet" + empty + "push" + FileName + "-ApiKey" + Api + "-Source" + empty + SourceLink;
+
+                await Task.Run(() =>
+                {
+                    Shell.RunCommand(setKey);
+                    Shell.RunCommand(push, "1", "true", true, false, false);
+                });
             }
         }
     }

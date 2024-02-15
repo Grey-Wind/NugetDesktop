@@ -4,6 +4,10 @@
   },
   "Label": {
     "FolderLabel": "准备发布的文件所在的文件夹",
-    "ApiLabel": "API密钥"
+    "ApiLabel": "API密钥",
+    "FileNameLabel": "文件名称"
+  },
+  "Button": {
+    "PushBtn": "推送"
   }
 }

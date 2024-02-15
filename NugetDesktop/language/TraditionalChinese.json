@@ -4,6 +4,7 @@
   },
   "Label": {
     "FolderLabel": "準備發佈的文件所在的文件夾",
-    "ApiLabel": "API密鑰"
+    "ApiLabel": "API密鑰",
+    "FileNameLabel": "文件名稱"
   }
 }
