@@ -3,7 +3,7 @@
     "Title": "Nuget Push桌面端"
   },
   "Label": {
-    "FolderLabel": "準備發佈的文件所在的文件夾",
+    "FolderLabel": "文件夾路徑",
     "ApiLabel": "API密鑰",
     "FileNameLabel": "文件名稱"
   }

@@ -3,7 +3,7 @@
     "Title": "Nuget Push Desktop"
   },
   "Label": {
-    "FolderLabel": "Folder for published files",
+    "FolderLabel": "Folder Path",
     "ApiLabel": "API Key",
     "FileNameLabel": "File Name"
   }
